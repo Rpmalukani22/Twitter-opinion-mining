@@ -17,16 +17,16 @@ def Cleaner(tweetbody):
     print(tweetbody)
     print("__" * 50 + "Cleaned" + "__" * 50)
     regex = r"(@\w+)" # Find user tags(for example @user)
-    tweetbody=''.join(re.sub(regex,"",tweetbody)) # Replace matched pattern with space
-    # regex = r"(\#\w+)"  # Find hash tags(for example #NZvSL)
-    # tweetbody = re.sub(regex, " ", tweetbody)  # Replace matched pattern with space
-    regex = r"[^0-9A-z \t]" # Find special character
-    tweetbody=''.join(re.sub(regex,"",tweetbody)) # remove special character
+    tweetbody=''.join(re.sub(regex,"",tweetbody)) # Remove matched pattern
     regex = r"(\w+:\/\/\S+)" #find links
-    tweetbody=''.join(re.sub(regex,"",tweetbody))
-    regex = r"(\s)"  # find links
+    tweetbody=''.join(re.sub(regex,"",tweetbody))#remove links
+    regex = r"(#\w+)"  # Find hash tags(for example #NZvSL)
+    tweetbody = re.sub(regex, "", tweetbody)  # Replace matched pattern with space
+    regex = r"[^0-9A-z \t]" # Find special characters
+    tweetbody=''.join(re.sub(regex,"",tweetbody)) # remove special characters
+    regex = r"(\s)"
     tweetbody = ''.join(re.sub(regex," ", tweetbody))
-    tweetbody=" ".join(tweetbody.split())
+    tweetbody=" ".join(tweetbody.split()) # Multiple space characters with single space character
     print(tweetbody)
     print("__"*100)
 
