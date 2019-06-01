@@ -8,7 +8,7 @@ def get_tweets(query,count):
     tweets=[]
     fetched_data = api.search(q=query,count=count)
     for tweet in fetched_data:
-        print(tweet) #live fetch of tweeter
+        print(tweet) #fetched tweet
 
 consumer_key=get_secrets.get_secrets.get_consumer_key()
 consumer_secret = get_secrets.get_secrets.get_consumer_secret()
