@@ -1,4 +1,3 @@
 *.pyc
-get_secrets.py
 /venv
 /.idea
